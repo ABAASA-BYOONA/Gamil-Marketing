@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Gamil Marketing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #f9f9f9;
+            --secondary-color: #f9f9f9;
+            --border-color: #ddd;
+            --font-color: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header, .footer {
+            background-color: var(--primary-color);
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .search-bar input,
+        .search-bar button {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: blueviolet;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .payment-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .payment-method {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .payment-method:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .payment-method.active {
+            border-color: var(--primary-color);
+            background-color: #e7f3ff;
+        }
+
+        .payment-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .payment-form.active {
+            display: block;
+        }
+
+        .payment-form input,
+        .payment-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .payment-form button {
+            background-color: var(--primary-color);
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        .payment-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .payment-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--font-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Gamil Marketing</div>
+        <nav class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products..." aria-label="Search products">
+                <button title="Search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="cart">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a>
+            </div>
+           
+        </div>
+    </header>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <h2>Select Payment Method</h2>
+        <div class="payment-methods" role="radiogroup" aria-labelledby="payment-methods-label">
+            <div class="payment-method" data-method="mtn" role="radio" aria-checked="false" tabindex="0">
+                <i class="fas fa-mobile-alt"></i>
+                <p>MTN Mobile Money</p>
+            </div>
+            <div class="payment-method" data-method="airtel" role="radio" aria-checked="false" tabindex="0">
+                <i class="fas fa-mobile-alt"></i>
+                <p>Airtel Mobile Money</p>
+            </div>
+            <div class="payment-method" data-method="visa" role="radio" aria-checked="false" tabindex="0">
+                <i class="fab fa-cc-visa"></i>
+                <p>Visa Card</p>
+            </div>
+        </div>
+
+        <!-- MTN Mobile Money Form -->
+        <form class="payment-form" id="mtn-form">
+            <h3>MTN Mobile Money</h3>
+            <label for="mtn-number">Enter your MTN number</label>
+            <input type="text" id="mtn-number" placeholder="Enter your MTN number" required>
+            <button type="submit">Pay with MTN</button>
+        </form>
+
+        <!-- Airtel Mobile Money Form -->
+        <form class="payment-form" id="airtel-form">
+            <h3>Airtel Mobile Money</h3>
+            <label for="airtel-number">Enter your Airtel number</label>
+            <input type="text" id="airtel-number" placeholder="Enter your Airtel number" required>
+            <button type="submit">Pay with Airtel</button>
+        </form>
+
+        <!-- Visa Card Form -->
+        <form class="payment-form" id="visa-form">
+            <h3>Visa Card</h3>
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="Card Number" required>
+            <label for="card-holder">Card Holder Name</label>
+            <input type="text" id="card-holder" placeholder="Card Holder Name" required>
+            <label for="expiry-date">Expiry Date (MM/YY)</label>
+            <input type="text" id="expiry-date" placeholder="Expiry Date (MM/YY)" required>
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="CVV" required>
+            <button type="submit">Pay with Visa</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Gamil Marketing. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="cartpage.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            const paymentForms = document.querySelectorAll('.payment-form');
+
+            const handlePaymentMethodClick = (method) => {
+                // Remove active class from all payment methods
+                paymentMethods.forEach(m => {
+                    m.classList.remove('active');
+                    m.setAttribute('aria-checked', 'false');
+                });
+                // Add active class to the clicked payment method
+                method.classList.add('active');
+                method.setAttribute('aria-checked', 'true');
+
+                // Hide all payment forms
+                paymentForms.forEach(form => {
+                    form.classList.remove('active');
+                    form.style.display = 'none';
+                });
+
+                // Show the corresponding payment form
+                const formId = `${method.dataset.method}-form`;
+                document.getElementById(formId).classList.add('active');
+                document.getElementById(formId).style.display = 'block';
+            };
+
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', () => handlePaymentMethodClick(method));
+                method.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        handlePaymentMethodClick(method);
+                    }
+                });
+            });
+
+            
+            paymentMethods.forEach(method => {
+                method.addEventListener('javascript')
+                method.addEventListener('click', () => handlePaymentMethodClick(method));
+                method.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        handlePaymentMethodClick(method);
+                    }
+                });
+            });
+
+            paymentForms.forEach(form => {
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const formData = new FormData(form);
+                    const paymentData = Object.fromEntries(formData.entries());
+
+                    try {
+                        const response = await processPayment(paymentData);
+                        if (response.success) {
+                            alert('Payment successful!');
+                            // Redirect to a thank you page or update the UI
+                        } else {
+                            alert('Payment failed: ' + response.message);
+                        }
+                    } catch (error) {
+                        alert('An error occurred: ' + error.message);
+                    }
+                });
+            });
+        });
+
+        async function processPayment(paymentData) {
+            const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+            const apiUrl = 'https://api.paygateway.com/pay'; // Replace with the actual API URL
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify(paymentData)
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            return response.json();
+        }
+    </script>
+</body>
+
+</html>

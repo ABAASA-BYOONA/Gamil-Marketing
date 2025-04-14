@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Gamil Marketing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header-->
+    <header class="header">
+        <div class="logo">Gamil Marketing</div>
+        <nav class="nav-menu">
+            <div class="menu-toggle">
+                <i class="fas fa-bars">☰</i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button title="Search"><i class="fas fa-search"></i></button>
+            </div>
+           
+        </div>
+    </header>
+
+    <!-- Contact Section-->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><i class="fas fa-envelope"></i> support@gamilmarketing.com</p>
+                <p><i class="fas fa-phone"></i> +256 758967699</p>
+                <p><i class="fas fa-map-marker-alt"></i> Makerere University</p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+                <div id="response"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer (unchanged) -->
+    <footer class="footer">
+        <p>© 2025 Gamil Marketing. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script>
+        const { createClient } = supabase;
+        const supabaseClient = createClient(
+            'https://unyuqfyzyflfuilkjcvb.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVueXVxZnl6eWZsZnVpbGtqY3ZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQwMTYxNzAsImV4cCI6MjA1OTU5MjE3MH0.UME6IL9WeJCgy25NBVHiKSZgYcHSCVTzNryDZq7HYx8'
+        );
+
+        const form = document.querySelector('#contactForm');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formInputs = form.querySelectorAll('input, textarea');
+            let submission = {};
+            
+            formInputs.forEach(element => {
+                const { value, name } = element;
+                if (value) {
+                    submission[name] = value;
+                }
+            });
+
+            const { data, error } = await supabaseClient
+                .from('contact_form') // Changed to 'contact_form' (underscore, no space)
+                .insert([submission], { returning: 'minimal' });
+
+            if (error) {
+                console.error('Supabase error:', error.message); // Log error details
+                alert('There was an error, please try again: ' + error.message);
+            } else {
+                alert('Thanks for contacting us, we will get back to you shortly');
+            }
+
+            formInputs.forEach(element => element.value = '');
+        });
+    </script>
+    
+</body>
+</html>

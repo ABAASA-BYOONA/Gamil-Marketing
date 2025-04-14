@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamil Marketing - Shop Different Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <img src="images/logo.png" alt="logo" class="logoimg">
+        </div>
+        <nav class="nav-menu">
+            <div class="menu-toggle">
+                <i class="fas fa-bars">☰</i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="categories.html">Categories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="electronics.html">Electronics</a></li>
+                        <li><a href="fashion.html">Fashion</a></li>
+                        <li><a href="home and living.html">Home & Living</a></li>
+                        <li><a href="sports and outdoor.html">Sports</a></li>
+                    </ul>
+                </li>
+                <li><a href="#target-section1">New Arrivals</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button title="Search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="cart">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a>
+            </div>
+           
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Your Style at Gamil Marketing</h1>
+            <p>Shop a variety of products at unbeatable prices!</p>
+            <div class="hero-buttons">
+                <button class="shop-now"><a href="categories.html">Shop Now</a></button>
+                <button class="learn-more"><a href="about.html">Learn More</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/Sony PS5 Slim Console (Playstation 5) One Controller - White.jpg" alt="Product 1">
+                <h3>Sony PS5 Slim Console (Playstation 5) One Controller</h3>
+                <p>UGX2199000</p>
+                <button data-name="Sony PS5 Slim Console (Playstation 5) One Controller" class="add-to-cart" data-product-id="1" data-price=2199000>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Lenevo Idea Pad52-in-1 OLED Touchscreen (Mercury Computer).jpg" alt="Product 2">
+                <h3>Lenevo Idea Pad52-in-1 OLED Touchscreen (Mercury Computer)</h3>
+                <p>UGX3850000</p>
+                <button class="add-to-cart" data-product-id="2" data-name="Lenevo Idea Pad52-in-1 OLED Touchscreen (Mercury Computer)" data-price=3850000>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Saachi StainlessSteel ElectricKettle,Silver.jpg" alt="Product 3">
+                <h3>Saachi StainlessSteel ElectricKettle,Silver</h3>
+                <p>UGX150000</p>
+                <button data-name="Saachi StainlessSteel ElectricKettle,Silver" data-price=150000 class="add-to-cart" data-product-id="3">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Smart MuteAutomatic BrushMopper Robot.jpg" alt="Product 4">
+                <h3>Smart MuteAutomatic BrushMopper Robot</h3>
+                <p>UGX135000</p>
+                <button data-name="Smart MuteAutomatic BrushMopper Robot" data-price=135000 class="add-to-cart" data-product-id="4">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="products new-arrivals" id="target-section1">
+        <h2>New Arrivals</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/Luik2021 NieuvileFull Cirkel TouchScreen Mens.jpg" alt="Product 5">
+                <h3>Luik2021 NieuvileFull Cirkel TouchScreen Mens</h3>
+                <table>
+                    <td>
+                <p class="price">UGX160000</p>
+            </td>
+            <td>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </td>
+            </table>
+                <button data-name="Luik2021 NieuvileFull Cirkel TouchScreen Mens" data-price=160000 class="add-to-cart" data-product-id="5">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Oraimo SmartWatch 2 GPS Function Smart.jpg" alt="Product 6">
+                <h3>Oraimo SmartWatch 2 GPS Function Smart</h3>
+                <table><td>
+
+                <p class="price">UGX250000</p>
+            </td>
+                <td>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                </td>
+            </table>
+                <button data-name="Oraimo SmartWatch 2 GPS Function Smart" data-price=250000 class="add-to-cart" data-product-id="6">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/gaming mouse.jpg" alt="Product 7">
+                <h3>Gaming Mouse</h3>
+                <table><td>
+                <p class="price">UGX45.99</p>
+            </td>
+            <td>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </td>
+            </table>
+                <button data-name="Gaming Mouse" data-price=45.99 class="add-to-cart" data-product-id="7">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/mechanical keyboard.jpg" alt="Product 8">
+                <h3>Mechanical Keyboard</h3>
+                <table>
+                    <td>
+                <p class="price">UGX89.99</p>
+            </td>
+            <td>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </td>
+            </table>
+                <button data-name="Mechanical Keyboard" data-price=89.99 class="add-to-cart" data-product-id="8">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="images/electronics.jpg" alt="Electronics">
+                <h3>Electronics</h3>
+            </div>
+            <div class="category-card">
+                <img src="images/fashion.jpg" alt="Fashion">
+                <h3>Fashion</h3>
+            </div>
+            <div class="category-card">
+                <img src="images/home and living.jpg" alt="Home & Living">
+                <h3>Home & Living</h3>
+            </div>
+            <div class="category-card">
+                <img src="images/sports and outdoors.jpg" alt="Sports">
+                <h3>Sports & Outdoor</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get updates about new products and special offers!</p>
+            <form class="newsletter-form" mailto:abaasabyoona@1>
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit"  >Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Gamil Marketing. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cartpage.js"></script>
+</body>
+
+</html>
