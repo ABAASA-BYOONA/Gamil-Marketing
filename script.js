@@ -112,16 +112,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const productCards = document.querySelectorAll('.product-card');
 
     productCards.forEach(card => {
+        const img = card.querySelector('.product-image');
+        const imgContainer = card.querySelector('.product-image-container');
+
         card.addEventListener('click', function() {
-            // Remove the enlarged class from all product cards
-            productCards.forEach(c => c.classList.remove('enlarged'));
-
-            // Add the enlarged class to the clicked product card
-            card.classList.add('enlarged');
-
-            // Add the enlarged class to the image within the clicked product card
-            const img = card.querySelector('img');
-            img.classList.add('enlarged');
+            if (img.classList.contains('enlarged-img')) {
+                // If the image is already enlarged, return it to its original size
+                img.classList.remove('enlarged-img');
+                imgContainer.appendChild(img);
+            } else {
+                // Enlarge the image and move it to the body
+                img.classList.add('enlarged-img');
+                document.body.appendChild(img);
+            }
         });
     });
 });
