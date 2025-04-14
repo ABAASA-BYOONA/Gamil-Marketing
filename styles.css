@@ -361,8 +361,7 @@ a {
 
 /* Products Section */
 /* Style for the enlarged image */
-/* Style for the enlarged image */
-.product-card .enlarged-img {
+.enlarged-img {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -371,10 +370,11 @@ a {
     transition: transform 0.3s ease;
     max-width: 80%;
     max-height: 80%;
+    border: 2px solid #000; /* Optional: Add a border for better visibility */
 }
 
-/* Style for the product card when the image is enlarged */
-.product-card .product-image {
+/* Ensure the image is not enlarged initially */
+.product-image {
     transition: transform 0.3s ease;
 }
 
