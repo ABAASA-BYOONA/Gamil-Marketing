@@ -113,13 +113,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     productCards.forEach(card => {
         const img = card.querySelector('.product-image');
-        const imgContainer = card.querySelector('.product-image-container');
 
         card.addEventListener('click', function() {
             if (img.classList.contains('enlarged-img')) {
                 // If the image is already enlarged, return it to its original size
                 img.classList.remove('enlarged-img');
-                imgContainer.appendChild(img);
+                img.style.transform = 'scale(1)';
+                card.querySelector('.product-image-container').appendChild(img);
             } else {
                 // Enlarge the image and move it to the body
                 img.classList.add('enlarged-img');
