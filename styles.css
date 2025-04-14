@@ -360,6 +360,25 @@ a {
 }
 
 /* Products Section */
+/* Style for the floating image container */
+.floating-image-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none;
+    border: 2px solid #000;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Style for the floating image */
+.floating-image-container img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
 .products {
     padding: 50px 30px;
     text-align: center;
