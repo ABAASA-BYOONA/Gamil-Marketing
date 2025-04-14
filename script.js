@@ -107,3 +107,21 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove the enlarged class from all product cards
+            productCards.forEach(c => c.classList.remove('enlarged'));
+
+            // Add the enlarged class to the clicked product card
+            card.classList.add('enlarged');
+
+            // Add the enlarged class to the image within the clicked product card
+            const img = card.querySelector('img');
+            img.classList.add('enlarged');
+        });
+    });
+});
