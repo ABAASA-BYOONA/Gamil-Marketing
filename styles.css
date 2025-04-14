@@ -360,24 +360,6 @@ a {
 }
 
 /* Products Section */
-/* Style for the enlarged image */
-.enlarged-img {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(2);
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    max-width: 80%;
-    max-height: 80%;
-    border: 2px solid #000; /* Optional: Add a border for better visibility */
-}
-
-/* Ensure the image is not enlarged initially */
-.product-image {
-    transition: transform 0.3s ease;
-}
-
 .products {
     padding: 50px 30px;
     text-align: center;
