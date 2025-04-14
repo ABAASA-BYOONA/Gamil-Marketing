@@ -128,3 +128,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+    const fullscreenImageContainer = document.createElement('div');
+    fullscreenImageContainer.classList.add('fullscreen-image-container');
+    document.body.appendChild(fullscreenImageContainer);
+
+    productCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const imgSrc = card.querySelector('img').src;
+            const imgAlt = card.querySelector('img').alt;
+            fullscreenImageContainer.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}">`;
+            fullscreenImageContainer.style.display = 'flex';
+        });
+    });
+
+    fullscreenImageContainer.addEventListener('click', function() {
+        fullscreenImageContainer.style.display = 'none';
+        fullscreenImageContainer.innerHTML = ''; // Clear the image
+    });
+});
