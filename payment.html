@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Payment - Gamil Marketing</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <style>
         :root {
             --primary-color: #f9f9f9;
@@ -14,92 +14,99 @@
             --border-color: #ddd;
             --font-color: #333;
         }
-.nav-menu {
-    position: relative;
-}
 
-.menu-toggle {
-    display:none; /* Hidden on desktop */
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 10px;
-    color:black;
-}
+        .nav-menu {
+            position: relative;
+        }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        .menu-toggle {
+            display: none;
+            /* Hidden on desktop */
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            color: black;
+        }
 
-.nav-links li {
-    text-wrap: nowrap;
-    position: relative;
-    font-size: small;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
 
-.nav-links a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #333;
-    transition: all 0.3s ease;
-}
+        .nav-links li {
+            text-wrap: nowrap;
+            position: relative;
+            font-size: small;
+            margin: 0 15px;
+        }
 
-.nav-links a:hover {
-    background-color: #f5f5f5;
-}
+        .nav-links a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
+        .nav-links a:hover {
+            background-color: #f5f5f5;
+        }
 
-.dropdown-content a {
-    padding: 12px 20px;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+        .dropdown-content a {
+            padding: 12px 20px;
+        }
 
-.nav-menu ul {
-    list-style: none;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-.nav-menu ul li {
-    margin: 0 15px;
-}
+        .nav-menu ul {
+            list-style: none;
+        }
 
-.nav-menu ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-}
+        .nav-menu ul li {
+            margin: 0 15px;
+        }
 
-.nav-menu ul li a:hover {
-    color: #e91e63;
-}
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
 
-.header-right {
-    display: flex;
-    align-items: center;
-}
+        .nav-menu ul li a:hover {
+            color: #e91e63;
+        }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #fff;
+            color: var(--font-color);
         }
 
-        .header, .footer {
+        .header,
+        .footer {
             background-color: var(--primary-color);
             color: black;
             padding: 10px 20px;
@@ -126,31 +133,58 @@
             cursor: pointer;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            color: black;
-            text-decoration: none;
-        }
-
         .payment-section {
             padding: 20px;
+            max-width: 700px;
+            margin: 0 auto;
             text-align: center;
+        }
+
+        .delivery-details-section {
+            background-color: #fefefe;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .delivery-details-section h2 {
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .delivery-details-section label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--font-color);
+        }
+
+        .delivery-details-section input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .delivery-details-section input:focus {
+            border-color: #4a90e2;
+            outline: none;
+            box-shadow: 0 0 5px #4a90e2;
         }
 
         .payment-methods {
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .payment-method {
@@ -159,21 +193,37 @@
             border-radius: 8px;
             text-align: center;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, border-color 0.3s;
+            flex: 1 1 150px;
+            max-width: 200px;
+            user-select: none;
         }
 
-        .payment-method:hover {
+        .payment-method:hover,
+        .payment-method:focus {
             background-color: var(--secondary-color);
+            border-color: #4a90e2;
+            outline: none;
         }
 
         .payment-method.active {
-            border-color: var(--primary-color);
+            border-color: #4a90e2;
             background-color: #e7f3ff;
+        }
+
+        .payment-method i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #4a90e2;
         }
 
         .payment-form {
             display: none;
             margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
         }
 
         .payment-form.active {
@@ -187,23 +237,34 @@
             margin: 10px 0;
             border: 1px solid var(--border-color);
             border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .payment-form input:focus {
+            border-color: #4a90e2;
+            outline: none;
+            box-shadow: 0 0 5px #4a90e2;
         }
 
         .payment-form button {
-            background-color: var(--primary-color);
-            color: black;
+            background-color: #4a90e2;
+            color: white;
             border: none;
             cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
         }
 
         .payment-form button:hover {
-            background-color: #0056b3;
+            background-color: #357abd;
         }
 
         .payment-form label {
             display: block;
             margin-bottom: 5px;
             color: var(--font-color);
+            font-weight: 600;
         }
     </style>
 </head>
@@ -219,86 +280,87 @@
         </nav>
         <div class="header-right">
             <div class="search-bar">
-                <input type="text" placeholder="Search products..." aria-label="Search products">
+                <input type="text" placeholder="Search products..." aria-label="Search products" />
                 <button title="Search"><i class="fas fa-search"></i></button>
             </div>
             <div class="cart">
                 <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a>
             </div>
-           
         </div>
     </header>
-<!-- Delivery Details Section -->
-<section class="delivery-details-section" style="padding: 20px; max-width: 600px; margin: 0 auto; text-align: left;">
-    <h2>Delivery Details</h2>
-    <form id="delivery-details-form">
-        <label for="full-name">Full Name</label>
-        <input type="text" id="full-name" name="fullName" placeholder="Enter your full name" required>
 
-        <label for="phone-number">Phone Number</label>
-        <input type="tel" id="phone-number" name="phoneNumber" placeholder="Enter your phone number" required>
-
-        <label for="street-address">Street Address</label>
-        <input type="text" id="street-address" name="streetAddress" placeholder="Enter your street address" required>
-
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" placeholder="Enter your city" required>
-
-        <label for="state">State/Province</label>
-        <input type="text" id="state" name="state" placeholder="Enter your state or province" required>
-
-        <label for="postal-code">Postal Code</label>
-        <input type="text" id="postal-code" name="postalCode" placeholder="Enter your postal code" required>
-
-        <label for="country">Country</label>
-        <input type="text" id="country" name="country" placeholder="Enter your country" required>
-    </form>
-</section>
     <!-- Payment Section -->
-    <section class="payment-section">
-        <h2>Select Payment Method</h2>
+    <section class="payment-section" aria-label="Payment and delivery details">
+        <!-- Delivery Details Section -->
+        <section class="delivery-details-section" aria-labelledby="delivery-details-heading">
+            <h2 id="delivery-details-heading">Delivery Details</h2>
+            <form id="delivery-details-form" novalidate>
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="fullName" placeholder="Enter your full name" required autocomplete="name" />
+
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phoneNumber" placeholder="Enter your phone number" required autocomplete="tel" pattern="^\+?[0-9\s\-]{7,15}$" title="Enter a valid phone number" />
+
+                <label for="street-address">Street Address</label>
+                <input type="text" id="street-address" name="streetAddress" placeholder="Enter your street address" required autocomplete="street-address" />
+
+                <label for"city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required autocomplete="address-level2" />
+
+                <label for="state">State/Province</label>
+                <input type="text" id="state" name="state" placeholder="Enter your state or province" required autocomplete="address-level1" />
+
+                <label for="postal-code">Postal Code</label>
+                <input type="text" id="postal-code" name="postalCode" placeholder="Enter your postal code" required autocomplete="postal-code" />
+
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" placeholder="Enter your country" required autocomplete="country" />
+            </form>
+        </section>
+
+        <h2 id="payment-methods-label">Select Payment Method</h2>
         <div class="payment-methods" role="radiogroup" aria-labelledby="payment-methods-label">
             <div class="payment-method" data-method="mtn" role="radio" aria-checked="false" tabindex="0">
-                <i class="fas fa-mobile-alt"></i>
+                <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                 <p>MTN Mobile Money</p>
             </div>
             <div class="payment-method" data-method="airtel" role="radio" aria-checked="false" tabindex="0">
-                <i class="fas fa-mobile-alt"></i>
+                <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                 <p>Airtel Mobile Money</p>
             </div>
             <div class="payment-method" data-method="visa" role="radio" aria-checked="false" tabindex="0">
-                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-visa" aria-hidden="true"></i>
                 <p>Visa Card</p>
             </div>
         </div>
 
         <!-- MTN Mobile Money Form -->
-        <form class="payment-form" id="mtn-form">
+        <form class="payment-form" id="mtn-form" novalidate>
             <h3>MTN Mobile Money</h3>
             <label for="mtn-number">Enter your MTN number</label>
-            <input type="text" id="mtn-number" placeholder="Enter your MTN number" required>
+            <input type="tel" id="mtn-number" name="mtnNumber" placeholder="Enter your MTN number" required pattern="^\+?[0-9\s\-]{7,15}$" title="Enter a valid phone number" />
             <button type="submit">Pay with MTN</button>
         </form>
 
         <!-- Airtel Mobile Money Form -->
-        <form class="payment-form" id="airtel-form">
+        <form class="payment-form" id="airtel-form" novalidate>
             <h3>Airtel Mobile Money</h3>
             <label for="airtel-number">Enter your Airtel number</label>
-            <input type="text" id="airtel-number" placeholder="Enter your Airtel number" required>
+            <input type="tel" id="airtel-number" name="airtelNumber" placeholder="Enter your Airtel number" required pattern="^\+?[0-9\s\-]{7,15}$" title="Enter a valid phone number" />
             <button type="submit">Pay with Airtel</button>
         </form>
 
         <!-- Visa Card Form -->
-        <form class="payment-form" id="visa-form">
+        <form class="payment-form" id="visa-form" novalidate>
             <h3>Visa Card</h3>
             <label for="card-number">Card Number</label>
-            <input type="text" id="card-number" placeholder="Card Number" required>
+            <input type="text" id="card-number" name="cardNumber" placeholder="Card Number" required pattern="^\d{13,19}$" title="Enter a valid card number" inputmode="numeric" />
             <label for="card-holder">Card Holder Name</label>
-            <input type="text" id="card-holder" placeholder="Card Holder Name" required>
+            <input type="text" id="card-holder" name="cardHolder" placeholder="Card Holder Name" required />
             <label for="expiry-date">Expiry Date (MM/YY)</label>
-            <input type="text" id="expiry-date" placeholder="Expiry Date (MM/YY)" required>
+            <input type="text" id="expiry-date" name="expiryDate" placeholder="MM/YY" required pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$" title="Enter expiry date in MM/YY format" />
             <label for="cvv">CVV</label>
-            <input type="text" id="cvv" placeholder="CVV" required>
+            <input type="text" id="cvv" name="cvv" placeholder="CVV" required pattern="^\d{3,4}$" title="Enter a valid CVV" inputmode="numeric" />
             <button type="submit">Pay with Visa</button>
         </form>
     </section>
@@ -313,27 +375,27 @@
         document.addEventListener('DOMContentLoaded', () => {
             const paymentMethods = document.querySelectorAll('.payment-method');
             const paymentForms = document.querySelectorAll('.payment-form');
+            const deliveryForm = document.getElementById('delivery-details-form');
 
             const handlePaymentMethodClick = (method) => {
-                // Remove active class from all payment methods
                 paymentMethods.forEach(m => {
                     m.classList.remove('active');
                     m.setAttribute('aria-checked', 'false');
                 });
-                // Add active class to the clicked payment method
                 method.classList.add('active');
                 method.setAttribute('aria-checked', 'true');
 
-                // Hide all payment forms
                 paymentForms.forEach(form => {
                     form.classList.remove('active');
                     form.style.display = 'none';
                 });
 
-                // Show the corresponding payment form
                 const formId = `${method.dataset.method}-form`;
-                document.getElementById(formId).classList.add('active');
-                document.getElementById(formId).style.display = 'block';
+                const formToShow = document.getElementById(formId);
+                if (formToShow) {
+                    formToShow.classList.add('active');
+                    formToShow.style.display = 'block';
+                }
             };
 
             paymentMethods.forEach(method => {
@@ -346,29 +408,35 @@
                 });
             });
 
-            
-            paymentMethods.forEach(method => {
-                method.addEventListener('javascript')
-                method.addEventListener('click', () => handlePaymentMethodClick(method));
-                method.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        handlePaymentMethodClick(method);
-                    }
-                });
-            });
-
             paymentForms.forEach(form => {
                 form.addEventListener('submit', async (event) => {
                     event.preventDefault();
-                    const formData = new FormData(form);
-                    const paymentData = Object.fromEntries(formData.entries());
+
+                    // Validate delivery details form before payment
+                    if (!deliveryForm.checkValidity()) {
+                        deliveryForm.reportValidity();
+                        return;
+                    }
+
+                    // Validate payment form
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+
+                    // Collect delivery details
+                    const deliveryData = Object.fromEntries(new FormData(deliveryForm).entries());
+                    // Collect payment details
+                    const paymentData = Object.fromEntries(new FormData(form).entries());
+
+                    // Combine data for processing
+                    const combinedData = { deliveryDetails: deliveryData, paymentDetails: paymentData };
 
                     try {
-                        const response = await processPayment(paymentData);
+                        const response = await processPayment(combinedData);
                         if (response.success) {
                             alert('Payment successful!');
-                            // Redirect to a thank you page or update the UI
+                            // Redirect or update UI here
                         } else {
                             alert('Payment failed: ' + response.message);
                         }
